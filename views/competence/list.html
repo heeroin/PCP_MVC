@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PCP_MVC - Index</title>
+        <style>
+          body {
+            background-color: #A1A0A0;
+            color: yellow;
+          }
+          .competences {
+            color: black;
+              }
+              table {
+          border-collapse: collapse;
+          border: 1px solid black;
+              }
+          table, th, td {
+           border: 1px solid black;
+             }
+        </style>
+    </head>
+    <body>
+      {#
+          <form>
+              First name:<br>
+              <input type="text" name="params"><br>
+          </form>
+      #}     
+      <table  border: medium solid #000000;
+        width: 50%;>
+         <tr>
+      {% for competence in competenceList %}        
+       <th class="competences">{{ competence.Lib }}</th>
+      {% endfor %}
+        </tr>
+      </table>
+      </div>
+    <br> <a href="?c=index">Ajouter une tache
+    </body>
+</html>
