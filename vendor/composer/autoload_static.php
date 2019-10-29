@@ -114,7 +114,7 @@ class ComposerStaticInit6ef68313e2bd271f6a417b3aab7dfa9c
         ),
         'Entity\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/entity',
+            0 => __DIR__ . '/../..' . '/Entity',
         ),
         'Doctrine\\ORM\\' => 
         array (

@@ -1004,17 +1004,17 @@
     },
     {
         "name": "symfony/console",
-        "version": "v4.3.4",
-        "version_normalized": "4.3.4.0",
+        "version": "v4.3.5",
+        "version_normalized": "4.3.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/console.git",
-            "reference": "de63799239b3881b8a08f8481b22348f77ed7b36"
+            "reference": "929ddf360d401b958f611d44e726094ab46a7369"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/console/zipball/de63799239b3881b8a08f8481b22348f77ed7b36",
-            "reference": "de63799239b3881b8a08f8481b22348f77ed7b36",
+            "url": "https://api.github.com/repos/symfony/console/zipball/929ddf360d401b958f611d44e726094ab46a7369",
+            "reference": "929ddf360d401b958f611d44e726094ab46a7369",
             "shasum": ""
         },
         "require": {
@@ -1046,7 +1046,7 @@
             "symfony/lock": "",
             "symfony/process": ""
         },
-        "time": "2019-08-26T08:26:39+00:00",
+        "time": "2019-10-07T12:36:49+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1262,17 +1262,17 @@
     },
     {
         "name": "symfony/service-contracts",
-        "version": "v1.1.6",
-        "version_normalized": "1.1.6.0",
+        "version": "v1.1.7",
+        "version_normalized": "1.1.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/service-contracts.git",
-            "reference": "ea7263d6b6d5f798b56a45a5b8d686725f2719a3"
+            "reference": "ffcde9615dc5bb4825b9f6aed07716f1f57faae0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/service-contracts/zipball/ea7263d6b6d5f798b56a45a5b8d686725f2719a3",
-            "reference": "ea7263d6b6d5f798b56a45a5b8d686725f2719a3",
+            "url": "https://api.github.com/repos/symfony/service-contracts/zipball/ffcde9615dc5bb4825b9f6aed07716f1f57faae0",
+            "reference": "ffcde9615dc5bb4825b9f6aed07716f1f57faae0",
             "shasum": ""
         },
         "require": {
@@ -1282,7 +1282,7 @@
         "suggest": {
             "symfony/service-implementation": ""
         },
-        "time": "2019-08-20T14:44:19+00:00",
+        "time": "2019-09-17T11:12:18+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1322,17 +1322,17 @@
     },
     {
         "name": "twig/twig",
-        "version": "v2.12.0",
-        "version_normalized": "2.12.0.0",
+        "version": "v2.12.1",
+        "version_normalized": "2.12.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/twigphp/Twig.git",
-            "reference": "c7a85fd08348ca04b4d8f234f49583d9910906aa"
+            "reference": "ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/twigphp/Twig/zipball/c7a85fd08348ca04b4d8f234f49583d9910906aa",
-            "reference": "c7a85fd08348ca04b4d8f234f49583d9910906aa",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5",
+            "reference": "ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5",
             "shasum": ""
         },
         "require": {
@@ -1345,7 +1345,7 @@
             "symfony/debug": "^3.4|^4.2",
             "symfony/phpunit-bridge": "^4.4@dev|^5.0"
         },
-        "time": "2019-10-05T16:42:38+00:00",
+        "time": "2019-10-17T07:34:53+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

@@ -5,7 +5,7 @@
         <style>
           body {
             background-color: #A1A0A0;
-            color: yellow;
+            color: black;
           }
           .competences {
             color: black;
@@ -19,22 +19,15 @@
              }
         </style>
     </head>
-    <body>
-      {#
-          <form>
-              First name:<br>
-              <input type="text" name="params"><br>
-          </form>
-      #}     
+    <body>   
       <table  border: medium solid #000000;
         width: 50%;>
-         <tr>
-      {% for competence in competenceList %}        
-       <th class="competences">{{ competence.Lib }}</th>
+        <tr>
+      {% for competence in competences %}        
+        <th class="competences">{{ competence.Lib }}</th>
       {% endfor %}
         </tr>
-      </table>
-      </div>
-    <br> <a href="?c=index">Ajouter une tache
+      </table>      
+           <a href="http://195.154.118.169/victor/MVC/?c=tache&t=new">Ajouter une tache</a>
     </body>
 </html>

@@ -12,8 +12,8 @@ class TestController extends Controller
         ]
       );
     }
-    public function receivedata($get,$post,$em) {
-      var_dump($post["params"]);
+    public function receivedata($get,$post) {
+      var_dump($post);
       die('fin');
     }
 }

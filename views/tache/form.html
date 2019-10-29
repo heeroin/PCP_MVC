@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PCP - Add</title>
+        <style>
+          body {
+            background-color: #A1A0A0;
+            color: black;
+          }
+        </style>
+    </head>
+    <body>   
+     <h2>Ajouter Tâche</h2>
+      <form action="http://195.154.118.169/victor/MVC/?c=tache&t=create" method="post">
+        Description: <input name="Description" />
+        <br><br> Date: <input type="date" id="start" name="Date"/>
+        <select name="competences[]" multiple=true size=5>
+          {% for competence in competences %}
+              <option value="{{ competence.id}}">{{ competence.lib }}</option>
+          {% endfor %}
+        </select>
+        
+        <input type="submit" value="envoi"/>
+        
+      </form>
+    </body>
+</html>

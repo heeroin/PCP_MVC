@@ -1,9 +1,8 @@
 <?php
 
 namespace Controllers;
-
+require_once "bootstrap.php";
 use Models\Users;
-
 
 class CompetenceController extends Controller
 {
@@ -12,16 +11,13 @@ class CompetenceController extends Controller
         echo "Hello ";
         echo $params;
     }
-   public function list()
+   public function list($get,$post,$em)
     {
-      $competenceMapper = spot()->mapper('Models\Competence');
-      $competenceMapper->migrate();
-      $competenceList = $competenceMapper->all();
-      
+      $competences = $em->getRepository('Entity\Competence')->findAll();
       echo $this->twig->render('list.html',
         [
-          "competenceList" => $competenceList,
-          "quantity" => count($competenceList)
+          "competences" => $competences,
+          "quantity" => count($competences)
         ]
       );
     }
