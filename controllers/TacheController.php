@@ -1,7 +1,11 @@
 <?php
 
-use Entity\Tache;
 namespace Controllers;
+use Entity\Tache;
+use Entity\Competence;
+//require_once "bootstrap.php";
+require_once "Entity/Tache.php";
+
 
 class TacheController extends Controller
 {
@@ -9,35 +13,40 @@ class TacheController extends Controller
     {
         echo "Hello ";
         echo $params;
-    } 
-    public function create($get,$post,$em)
+    }
+  
+    public function create($get, $post, $em, $path)
     {
-//        $tache = $em->getRepository("Entity\Tache")->findAll();
-//        $tache->setDescription($post["Description"]);
-//        $em->flush();
-//        die("plop");
-      
-      // you can fetch the EntityManager via $this->getDoctrine()
-        // or you can add an argument to the action: createProduct(EntityManagerInterface $entityManager)
-      
-        $tache = $em->getRepository("Entity\Tache")->findAll();
+        $competence = new Competence;
+        $tache = new Tache;       
         $tache->setDescription($post['Description']);
-        $tache->setDate($post["Date"]);
-
-        // tell Doctrine you want to (eventually) save the Product (no queries yet)
+        $date = new \DateTime($post['Date']);
+        $tache->setDate($date);                
+        $competences=$post['competences'];
+        $competenceTab=[];
+      
+        foreach ($competences as $competenceId) {
+          $competence = $em->getRepository("Entity\Competence")->find($competenceId);
+          if ($competence) {
+            $competenceTab[]=$competence;
+          }
+        }
+        $tache->addCompetences($competenceTab);         
+       
         $em->persist($tache);
-
-        // actually executes the queries (i.e. the INSERT query)
         $em->flush();
-
-        return new Response('Saved new product with id '.$tache->getId());
+      
+        echo $this->twig->render('created.html', array(
+            "tache"=>$tache
+         ));
     }
    
-    public function new($get, $post, $em)
+    public function new($get, $post, $em, $path)
     {
         $competences = $em->getRepository("Entity\Competence")->findAll();
          echo $this->twig->render('form.html', array(
-            "competences"=>$competences
+            "competences" => $competences,
+            "path" => $path
          ));
     }
    
@@ -47,7 +56,7 @@ class TacheController extends Controller
        $Tache = $em->getRepository("Entity\Tache")->findAll();
 
        echo $this->twig->render('list.html',array(       
-           "tache" => $Tache,
+           "taches" => $Tache,
         ));
      }
 }

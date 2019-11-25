@@ -26,7 +26,19 @@ class Tache
       * @ORM\Column(type="string") 
       */
     protected $Description;
-    
+    /**
+     * @ORM\ManyToMany(targetEntity="Competence", inversedBy="taches")
+     */
+    private $competences;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->competences = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id.
      *
@@ -84,5 +96,47 @@ class Tache
     {
         return $this->Description;
     }
-    
+
+    /**
+     * Add competence.
+     *
+     * @param \Entity\Competence $competence
+     *
+     * @return Tache
+     */
+    public function addCompetence(\Entity\Competence $competence)
+    {
+        $this->competences[] = $competence;
+
+        return $this;
+    }
+    public function addCompetences($competences)
+    {
+      foreach ($competences as $competence) {
+        $this->addCompetence($competence);
+      }
+      return($this);
+    }
+
+    /**
+     * Remove competence.
+     *
+     * @param \Entity\Competence $competence
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeCompetence(\Entity\Competence $competence)
+    {
+        return $this->competences->removeElement($competence);
+    }
+
+    /**
+     * Get competences.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCompetences()
+    {
+        return $this->competences;
+    }
 }

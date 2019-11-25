@@ -29,9 +29,9 @@ $postParams = isset($_POST) ? $_POST : null;
 $params = [
     "get"  => $getParams,
     "post" => $postParams,
-    "em" =>$entityManager
+    "em" =>$entityManager,
+    "path" => "http://195.154.118.169/victor/MVC/"
 ];
-  
 if (class_exists($class, true)) {
     $class = new $class();
     if (in_array($target, get_class_methods($class))) {

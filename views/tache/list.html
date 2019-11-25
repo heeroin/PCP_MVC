@@ -20,15 +20,17 @@
         </style>
     </head>
     <body>
-      <table  border: medium solid #000000;
-        width: 50%;>
-         <tr>
-        {% for taches in tache %}        
-       <th class="tache">{{ tache.Description }}</th>
-        {% endfor %}
-        </tr>
-      </table>
-      </div>
-    <br> <a href="?c=index">Ajouter une tache
+        <div>
+          <table  border: medium solid #000000;
+            width: 50%;>                
+             <tr>
+            {% for tache in taches %}        
+             <th class="taches">{{ tache.Description }}</th>
+             <th class="taches">{{ tache.Date | date("d/m/Y")}}</th> 
+            {% endfor %}
+            </tr>
+          </table>
+        </div>
+    <br> <a href="?c=tache&t=new">Ajouter une tache
     </body>
 </html>

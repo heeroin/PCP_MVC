@@ -18,18 +18,13 @@ class Competence
      */
     protected $id;
     /** 
-      * @ORM\Column(type="string") 
+      * @ORM\Column(type="string", nullable=true) 
       */
     protected $code;
     /**
       * @ORM\Column(type="string") 
       */
-    protected $Lib;
-  
-    /**
-     * @ORM\ManyToMany(targetEntity="Entity\Tache", inversedBy="competences")
-     */
-    protected $taches;
+    protected $Lib;  
 
     /**
      * Get id.
@@ -65,7 +60,7 @@ class Competence
         return $this->code;
     }
 
-  /**
+    /**
      * Set lib.
      *
      * @param string $lib
@@ -87,48 +82,5 @@ class Competence
     public function getLib()
     {
         return $this->Lib;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->taches = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add tach.
-     *
-     * @param \Entity\Tache $tach
-     *
-     * @return Competence
-     */
-    public function addTach(\Entity\Tache $tach)
-    {
-        $this->taches[] = $tach;
-
-        return $this;
-    }
-
-    /**
-     * Remove tach.
-     *
-     * @param \Entity\Tache $tach
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeTach(\Entity\Tache $tach)
-    {
-        return $this->taches->removeElement($tach);
-    }
-
-    /**
-     * Get taches.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTaches()
-    {
-        return $this->taches;
-    }
+    }  
 }

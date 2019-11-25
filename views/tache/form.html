@@ -11,7 +11,7 @@
     </head>
     <body>   
      <h2>Ajouter Tâche</h2>
-      <form action="http://195.154.118.169/victor/MVC/?c=tache&t=create" method="post">
+      <form action="{{path}}?c=tache&t=create" method="post">
         Description: <input name="Description" />
         <br><br> Date: <input type="date" id="start" name="Date"/>
         <select name="competences[]" multiple=true size=5>
